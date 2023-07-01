@@ -10,7 +10,7 @@ function mostraOla(request,response) {
 function mostraMulher(request,response){
   response.json({
     nome: 'Clara Pacheco',
-    avatar: 'https://avatars.githubusercontent.com/u/93992748?v=4',
+    avatar: 'https://github.com/Clara-Pacheco.png',
     miniBio: 'Desenvolvedora e UX Designer'
   })
 }
