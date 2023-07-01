@@ -9,7 +9,7 @@ function mostrarPorta(){
 
 function mostraHoraLocal(request,response){
   const data = new Date()
-  const hora = data.toLocaleDateString('pt-BR')
+  const hora = data.toLocaleTimeString('pt-BR')
   response.send(hora)
 }
 
