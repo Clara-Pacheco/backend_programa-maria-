@@ -10,8 +10,8 @@ function mostraOla(request,response) {
 function mostraMulher(request,response){
   response.json({
     nome: 'Clara Pacheco',
-    avatar: 'https://github.com/Clara-Pacheco.png',
-    miniBio: 'Desenvolvedora e UX Designer'
+    imagem: 'https://github.com/Clara-Pacheco.png',
+    minibio: 'Desenvolvedora e UX Designer'
   })
 }
 
