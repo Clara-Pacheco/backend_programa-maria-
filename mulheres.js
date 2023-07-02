@@ -51,16 +51,12 @@ function criarMulher(request,response){
 
 // PATCH 
 
-
-
 function corrigirMulher(request,response){
-  function encontraMulher(mulher){
+  const mulherEncontrada = mulheres.find((mulher)=>{
     if(mulher.id === request.params.id){
       return mulher 
     }
-  }
-
-  const mulherEncontrada = mulheres.find(encontraMulher)
+  }) 
 
   if(request.body.nome) {
     mulherEncontrada.nome = request.body.nome
@@ -77,10 +73,20 @@ function corrigirMulher(request,response){
   response.json(mulheres)
 }
 
+// DELETE
+
+function deletarMulher(request,response){
+ const mulheresQueFicam = mulheres.filter( (mulher) => {
+   return mulher.id !== request.params.id
+  })
+  response.json(mulheresQueFicam)
+}
+
 function mostrarPorta(){
   console.log("Servidor criado e rodando na porta", porta)
 }
 
+app.use(router.delete("/mulheres/:id",deletarMulher))
 app.use(router.patch("/mulheres/:id",corrigirMulher))
 app.use(router.post("/mulheres", criarMulher))
 app.use(router.get("/mulheres", mostraMulheres))
