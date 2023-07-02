@@ -51,10 +51,12 @@ function criarMulher(request,response){
 
 // PATCH 
 
+
+
 function corrigirMulher(request,response){
   function encontraMulher(mulher){
     if(mulher.id === request.params.id){
-      return mulher
+      return mulher 
     }
   }
 
@@ -72,7 +74,7 @@ function corrigirMulher(request,response){
     mulherEncontrada.minibio = request.body.minibio
   }
 
-  response.send(mulheres)
+  response.json(mulheres)
 }
 
 function mostrarPorta(){
