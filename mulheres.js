@@ -1,16 +1,24 @@
 const express = require('express')
 const router = express.Router()
 const { v4: uuidv4 } = require('uuid')
+
 const conectaBancoDeDados = require('./bancoDeDados')
 conectaBancoDeDados()
+const Mulher = require('./mulherModel')
+
 const app = express()
 app.use(express.json())
 const porta = 3333
 
 
 // GET
-function mostraMulheres(request,response){
-  response.json(mulheres)
+async function mostraMulheres(request,response){
+  try{
+    const mulheresVindasDoBancoDeDados = await Mulher.find()
+    response.json(mulheresVindasDoBancoDeDados)
+  } catch(error){
+    console.log(error)
+  }
 }
 
 // POST
