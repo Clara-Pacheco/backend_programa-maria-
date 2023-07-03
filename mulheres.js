@@ -7,31 +7,6 @@ const app = express()
 app.use(express.json())
 const porta = 3333
 
-const mulheres = [
-  {
-    id:'1',
-    nome: 'Simara Conceição', 
-    imagem: 'https://bit.ly/3LJIyOF',
-    minibio: 'Desenvolvedora e instrutora', 
-    },
-    
-    {
-    
-    id: '2',
-    nome: 'Iana Chan',
-    imagem: 'https://bit.ly/3JCXBqP',
-    minibio: 'CEO & Founder da PrograMaria',
-    },
-    
-    {
-    
-    id: '3',
-    nome: 'Luana Pimentel',
-    imagem: 'https://bit.ly/3FKpFaz',
-    minibio: 'Senior Staff Software Engineer',
-    
-    }
-]
 
 // GET
 function mostraMulheres(request,response){
