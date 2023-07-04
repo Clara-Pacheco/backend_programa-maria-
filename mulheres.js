@@ -68,11 +68,14 @@ async function corrigirMulher(request,response){
 
 // DELETE
 
-function deletarMulher(request,response){
- const mulheresQueFicam = mulheres.filter( (mulher) => {
-   return mulher.id !== request.params.id
-  })
-  response.json(mulheresQueFicam)
+async function deletarMulher(request,response){
+  try{
+    await Mulher.findByIdAndDelete(request.params.id)
+    response.json({mensagem : "Mulher deletada com sucesso"})
+  } catch(error){
+    console.log(error)
+  }
+  
 }
 
 function mostrarPorta(){
