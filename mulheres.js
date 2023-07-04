@@ -41,7 +41,7 @@ async function criarMulher(request,response){
 
 async function corrigirMulher(request,response){
   try{
-    const mulherEncontrada = await Mulher.findById(request.params)
+    const mulherEncontrada = await Mulher.findById(request.params.id)
 
     if(request.body.nome) {
       mulherEncontrada.nome = request.body.nome
