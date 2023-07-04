@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const cors = require('cors')
 
 const conectaBancoDeDados = require('./bancoDeDados')
 conectaBancoDeDados()
@@ -7,6 +8,7 @@ const Mulher = require('./mulherModel')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 const porta = 3333
 
 
